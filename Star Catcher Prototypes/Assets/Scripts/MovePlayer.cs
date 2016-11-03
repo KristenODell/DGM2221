@@ -86,7 +86,7 @@ public class MovePlayer : MonoBehaviour
         }
 
         //Adding the gravity var to the y position of the tempPos var.
-        tempPos.y -= gravity;
+        tempPos.y -= gravity * Time.deltaTime;
         //Adding the speed var to the tempPos var x value with the right and left arrow keys.
         tempPos.x = speed * Input.GetAxis("Horizontal");
         //Moves the charactercontroller at an even pace.

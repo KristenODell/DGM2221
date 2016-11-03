@@ -5,6 +5,8 @@ public class StarCollision : MonoBehaviour
 {
 
     private StarCounter starCounter;
+    public float speed = .1f;
+    private Vector3 tempPos;
 
 
     // Use this for initialization
@@ -13,10 +15,16 @@ public class StarCollision : MonoBehaviour
         starCounter = GameObject.Find("Star Counter").GetComponent<StarCounter>();
     }
 
+    void Start ()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        tempPos.x = speed * Time.deltaTime;
+        transform.Translate(.05f, .05f, 0);
     }
 
     //void OnCollisionEnter(Collision collision)
