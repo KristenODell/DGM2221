@@ -26,7 +26,6 @@ public class StarCollision : MonoBehaviour
             starCounter.starCount++;
             gameObject.SetActive(false);
         //Destroy(collision.gameObject);
-            print("Collision");
         //}
     }
 
