@@ -17,7 +17,7 @@ public class StarCollision : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        myTransform.position = myTransform.position + Vector3.zero;
+
 	}
     
     //void OnCollisionEnter(Collision collision)
