@@ -7,7 +7,7 @@ public class MovePlayer : MonoBehaviour
 {
 
     //This is the character controller component
-    private CharacterController myCC;
+    public CharacterController myCC;
     //Temp var of datatype Vector3 to move the character
     private Vector3 tempPos;
     //Speed of the temp var in x
@@ -90,10 +90,12 @@ public class MovePlayer : MonoBehaviour
         //Moves the charactercontroller at an even pace.
         myCC.Move(tempPos * Time.deltaTime);
         tempPos.z = 0;
+        
 
         if (transform.position.y <= deathHeight)
         {
             Statics.nextPosition = Statics.originalPosition;
+            Statics.backgroundNextPosition = Statics.backgroundOriginalPosition;
             SceneManager.LoadScene("Prototype One");
         }
 

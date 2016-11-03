@@ -42,8 +42,4 @@ public class CloneStar : MonoBehaviour
         StartCoroutine(SpawnStars());
     }
 
-    void Update()
-    {
-
-    }
 }

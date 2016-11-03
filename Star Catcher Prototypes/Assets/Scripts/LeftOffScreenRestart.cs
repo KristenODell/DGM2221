@@ -12,6 +12,7 @@ public class LeftOffScreenRestart : MonoBehaviour
     void OnTriggerEnter()
     {
         Statics.nextPosition = Statics.originalPosition;
+        Statics.backgroundNextPosition = Statics.backgroundOriginalPosition;
         SceneManager.LoadScene("Prototype One");
     }
 }

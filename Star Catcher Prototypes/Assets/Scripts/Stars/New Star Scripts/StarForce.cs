@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StarControl : MonoBehaviour
+public class StarForce : MonoBehaviour
 {
     public int forceTime = 10;
     public float forceDuration = 0.1f;
-    private bool canAddForce = true;
+    //private bool canAddForce = true;
     private Rigidbody rigid;
     private float force;
     public float forceRange = 10;
@@ -13,11 +13,10 @@ public class StarControl : MonoBehaviour
     public float torqueRange = 2;
     private Vector3 forceVector;
     private Vector3 torqueVector;
-    //private Animator anims;
+    private Animator anims;
 
     void Start()
     {
-        //anims = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody>();
         StartCoroutine(RunRandomForce());
     }
@@ -35,21 +34,5 @@ public class StarControl : MonoBehaviour
             rigid.AddForce(forceVector);
             forceTime--;
         }
-    }
-
-    public float endTime = 5;
-
-    //public void Deactivate()
-    //{
-    //    anims.SetBool("Destroy", false);
-    //    gameObject.SetActive(false);
-    //}
-
-    void OnCollisionEnter()
-    {
-        canAddForce = false;
-        //gameObject.SetActive(false);
-        Destroy(gameObject, endTime);
-        //anims.SetBool("Destroy", true);
     }
 }

@@ -18,14 +18,15 @@ public class StarCollision : MonoBehaviour
 	
 	}
     
-    void OnCollisionEnter(Collision collision)
+    //void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter()
     {
-        if(collision.gameObject.tag == "Player")
-        {
+        //if(collision.gameObject.tag == "Player")
+       // {
             starCounter.starCount++;
             gameObject.SetActive(false);
             //Destroy(collision.gameObject);
-        }
+        //}
     }
 
 }

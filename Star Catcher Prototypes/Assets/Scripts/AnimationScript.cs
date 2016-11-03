@@ -5,7 +5,7 @@ public class AnimationScript : MonoBehaviour
 {
     private Animator anim;
     public CharacterController cc;
-    int jumpHash = Animator.StringToHash("jump");
+    //int jumpHash = Animator.StringToHash("jump");
     private Rigidbody myRig;
 
 
@@ -21,10 +21,10 @@ public class AnimationScript : MonoBehaviour
     {
         float move = Input.GetAxis("Horizontal");
         anim.SetFloat("speed", Mathf.Abs(move));
-        // if (Input.GetKeyDown(KeyCode.Space) && !cc.isGrounded)
-       // {
-       //     anim.SetTrigger(jumpHash);
-       // }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    anim.SetTrigger(jumpHash);
+        //}
         //  if(cc.isGrounded)
         //  {
         //      anim.ResetTrigger(jumpHash);

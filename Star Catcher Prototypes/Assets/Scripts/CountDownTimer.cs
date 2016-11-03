@@ -7,14 +7,16 @@ public class CountDownTimer : MonoBehaviour
 {
     public Text text;
     float timeRemaining = 125;
-   // float timeUpText = 5;
+    //float timeUpText = 5;
+    public int timeUpFont = 20;
 
 	void Start ()
     {
         text = GetComponent<Text>();
 	}
-	
-	void Update ()
+
+
+    void Update()
     {
         timeRemaining -= Time.deltaTime;
         if (timeRemaining >= 0)
@@ -24,8 +26,8 @@ public class CountDownTimer : MonoBehaviour
         else
         {
             text.text = "TIME'S UP!";
+            text.fontSize = timeUpFont;
             //yield return new WaitForSeconds(timeUpText);
-            Statics.nextPosition = Statics.originalPosition;
             SceneManager.LoadScene("Splash Screen");
         }
     }
