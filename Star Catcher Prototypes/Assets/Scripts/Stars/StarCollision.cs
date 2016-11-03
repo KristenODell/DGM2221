@@ -23,9 +23,10 @@ public class StarCollision : MonoBehaviour
     //void OnCollisionEnter(Collision collision)
     void OnTriggerEnter()
     {
+        myTransform.position = myTransform.position + Vector3.zero;
         //if(collision.gameObject.tag == "Player")
-       // {
-            starCounter.starCount++;
+        // {
+        starCounter.starCount++;
             gameObject.SetActive(false);
         //Destroy(collision.gameObject);
         //}
