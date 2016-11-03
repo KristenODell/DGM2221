@@ -6,8 +6,6 @@ public class StarCollision : MonoBehaviour
 
     private StarCounter starCounter;
 
-    public float speed = 0;
-    private Vector3 tempPos;
 
     // Use this for initialization
     void Awake()
@@ -18,8 +16,7 @@ public class StarCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tempPos.x = speed * Time.deltaTime;
-        transform.Translate(tempPos);
+
     }
 
     //void OnCollisionEnter(Collision collision)
