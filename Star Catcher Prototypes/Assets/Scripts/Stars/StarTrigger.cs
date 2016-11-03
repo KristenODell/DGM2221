@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class StarTrigger : MonoBehaviour {
+public class StarTrigger : MonoBehaviour
+{
+    bool alive = true;
+    public int timer = 4;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    IEnumerator Stars ()
+    {
+        while (alive)
+        {
+            star.SetActive(false);
+            yield return new WaitForSeconds(timer);
+            star.SetActive(true);
+        }
+    }
+    
+    void OnTriggerEnter ()
+    {
+        Stars();
+    }
 }
