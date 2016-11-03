@@ -102,8 +102,9 @@ public class MovePlayer : MonoBehaviour
         }
 
     }
-    void OnTriggerEnter ()
+    void OnTriggerEnter()
     {
         star.SetActive(false);
+        star.SetActive(true);
     }
 }
