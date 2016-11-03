@@ -21,6 +21,8 @@ public class MovePlayer : MonoBehaviour
     public float slideTime = 0.1f;
     public float deathHeight = -10f;
 
+    public GameObject star;
+
     //Coroutine for sliding the character. Coroutines are IEnumerators.
     IEnumerator Slide()
     {
@@ -99,5 +101,9 @@ public class MovePlayer : MonoBehaviour
             SceneManager.LoadScene("Prototype One");
         }
 
+    }
+    void OnTriggerEnter ()
+    {
+        star.SetActive(false);
     }
 }
