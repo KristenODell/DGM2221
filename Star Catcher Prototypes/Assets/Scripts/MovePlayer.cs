@@ -104,6 +104,7 @@ public class MovePlayer : MonoBehaviour
     }
     void OnTriggerEnter()
     {
+        print("Colliding");
         star.SetActive(false);
         star.SetActive(true);
     }
