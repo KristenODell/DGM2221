@@ -6,6 +6,7 @@ public class StarTrigger : MonoBehaviour
 {
     bool alive = true;
     public int timer = 4;
+    public GameObject star;
 
     IEnumerator Stars ()
     {
