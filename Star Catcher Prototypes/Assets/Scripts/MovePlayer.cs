@@ -83,7 +83,6 @@ public class MovePlayer : MonoBehaviour
         {
             //Reset the jumpCount if it is grounded.
             jumpCount = 0;
-            tempPos.y = -gravity;
         }
 
         //Adding the gravity var to the y position of the tempPos var.
