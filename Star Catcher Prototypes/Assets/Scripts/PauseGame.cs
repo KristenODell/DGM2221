@@ -4,6 +4,7 @@ using System.Collections;
 public class PauseGame : MonoBehaviour
 {
     public Transform canvas;
+    p
 
 
     // Use this for initialization
