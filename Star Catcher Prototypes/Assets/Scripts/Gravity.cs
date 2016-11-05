@@ -18,12 +18,12 @@ public class Gravity : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //tempPos.y -= gravity * Time.deltaTime;
+        tempPos.y -= gravity * Time.deltaTime;
         tempPos.z = sideForce;
-       // if(myCC.isGrounded)
-       // {
-       //     tempPos.y = 0;
-       // }
+        if (myCC.isGrounded)
+        {
+            tempPos.y = 0;
+        }
         myCC.Move(tempPos);
 	}
 }
