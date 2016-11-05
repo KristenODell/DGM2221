@@ -10,7 +10,7 @@ public class Animation : MonoBehaviour {
 	void Start () {
         myMoveCharacter = new MovePlayer();
         myAnimator = GetComponent<Animator>();
-        myMoveCharacter.myCC = GetComponentInParent<CharacterController>();
+        myMoveCharacter.myCC = GetComponent<CharacterController>();
 	}
 	
 	// Update is called once per frame
