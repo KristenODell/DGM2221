@@ -15,7 +15,7 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Pause();
+        //Pause();
         //if (Input.GetKeyDown(KeyCode.P))
         //{
         //    if (canvas.gameObject.activeInHierarchy == false)
