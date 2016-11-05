@@ -18,17 +18,20 @@ public class CountDownTimer : MonoBehaviour
 
     void Update()
     {
-        timeRemaining -= Time.deltaTime;
-        if (timeRemaining >= 0)
+        if (!GameManager.Instance.Paused)
         {
-            text.text = "TIME REMAINING: " + timeRemaining.ToString("f0");
-        }
-        else
-        {
-            text.text = "TIME'S UP!";
-            text.fontSize = timeUpFont;
-            //yield return new WaitForSeconds(timeUpText);
-            SceneManager.LoadScene("Splash Screen");
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining >= 0)
+            {
+                text.text = "TIME REMAINING: " + timeRemaining.ToString("f0");
+            }
+            else
+            {
+                text.text = "TIME'S UP!";
+                text.fontSize = timeUpFont;
+                //yield return new WaitForSeconds(timeUpText);
+                SceneManager.LoadScene("Splash Screen");
+            }
         }
     }
 }
