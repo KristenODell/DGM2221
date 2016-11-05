@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
 {
     private bool paused;
 
+    public bool Paused
+    {
+        get { return paused; }
+    }
+
     private static GameManager instance;
 
     public static GameManager Instance
