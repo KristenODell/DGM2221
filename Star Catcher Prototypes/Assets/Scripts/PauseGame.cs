@@ -33,8 +33,7 @@ public class PauseGame : MonoBehaviour
 
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
+
             if (canvas.gameObject.activeInHierarchy == false)
             {
                 canvas.gameObject.SetActive(true);
@@ -45,6 +44,5 @@ public class PauseGame : MonoBehaviour
                 canvas.gameObject.SetActive(false);
                 Time.timeScale = 1;
             }
-        }
     }
 }
