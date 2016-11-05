@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 66ed0c7936cc7df4bb92ddc065339e99
-timeCreated: 1478037077
+guid: 736fd0d078dc2b54cb33197f880990f3
+timeCreated: 1478315534
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: DGM_2210_Star_Catcher_Land_Modules:persp
-    100002: polySurface5
+    100000: Land_Module_1
+    100002: left
     100004: //RootNode
-    400000: DGM_2210_Star_Catcher_Land_Modules:persp
-    400002: polySurface5
+    400000: Land_Module_1
+    400002: left
     400004: //RootNode
-    2300000: polySurface5
-    3300000: polySurface5
-    4300000: polySurface5
+    2300000: Land_Module_1
+    3300000: Land_Module_1
+    4300000: Land_Module_1
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -46,7 +46,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
