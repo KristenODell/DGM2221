@@ -30,7 +30,7 @@ public class PauseGame : MonoBehaviour
         //   }
     }
 
-    void PauseTheGame()
+    public void PauseTheGame()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
