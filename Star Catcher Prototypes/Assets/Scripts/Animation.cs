@@ -19,11 +19,11 @@ public class Animation : MonoBehaviour {
         myAnimator.SetFloat("speed", Mathf.Abs(move));
         if (!myMoveCharacter.myCC.isGrounded)
         {
-            myAnimator.SetLayerWeight(1, 1);
+            myAnimator.SetLayerWeight(0, 0);
         }
         else
         {
-            myAnimator.SetLayerWeight(1, 0);
+            myAnimator.SetLayerWeight(1, 1);
             myAnimator.SetBool("Jump", false);
             myAnimator.SetBool("Double Jump", false);
         }
