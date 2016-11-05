@@ -4,7 +4,7 @@ using System.Collections;
 public class Gravity : MonoBehaviour
 {
 
-    CharacterController myCC;
+    public CharacterController myCC;
     Vector3 tempPos;
     public float gravity = 1;
     public float sideForce = 1;
