@@ -18,5 +18,6 @@ public class WolfController : MonoBehaviour
     {
         tempPos.y -= gravity * Time.deltaTime;
         myCC.Move(tempPos);
+        tempPos.z = 0;
     }
 }
