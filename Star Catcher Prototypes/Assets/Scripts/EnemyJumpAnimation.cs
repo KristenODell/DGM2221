@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyJumpAnimation : MonoBehaviour {
+public class EnemyJumpAnimation : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 	
 	}
+
+    void OnTriggerEnter()
+    {
+        print("jump");
+    }
+
+    void OnTriggerExit ()
+    {
+        print("stop jump");
+    }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 }
