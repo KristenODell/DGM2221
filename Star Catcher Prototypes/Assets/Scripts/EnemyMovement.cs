@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private CharacterController myCC;
     public float gravity = 1;
     public float speed = 1;
+    public float fallingSpeed = 1;
     private Vector3 tempP;
 
 
@@ -40,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            tempP.x = 0;
+            tempP.x = fallingSpeed;
         }
     }
 }
