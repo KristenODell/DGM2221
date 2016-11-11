@@ -16,5 +16,9 @@ public class StarCounter : MonoBehaviour
 	void Update ()
     {
         counter.text = "STAR COUNT: " + starCount;
+        if(starCount < 0)
+        {
+            starCount = 0;
+        }
 	}
 }
