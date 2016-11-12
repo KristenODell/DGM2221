@@ -4,7 +4,7 @@ using System.Collections;
 public class CoinDamage : MonoBehaviour
 {
     private StarCounter starCounter;
-    private int damage = 3;
+    private int damage = 2;
 
 	// Use this for initialization
 	void Start ()

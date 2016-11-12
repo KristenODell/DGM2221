@@ -3,18 +3,20 @@ using System.Collections;
 
 public class EnemyStartTime : MonoBehaviour
 {
-    public float startTime = 15;
+    public int startTime = 15;
     public GameObject enemy;
 
     IEnumerator StartEnemy()
     {
+        int startTimeIndex = Random.Range(0, startTime);
         int i = 1;
         while (i > 0)
         {
-            yield return new WaitForSeconds(startTime);
+            yield return new WaitForSeconds(startTimeIndex);
             enemy.SetActive(true);
             i--;
         }
+        print(startTimeIndex);
     }
 
     // Use this for initialization
