@@ -7,13 +7,22 @@ public class CountDownTimer : MonoBehaviour
 {
     public Text text;
     float timeRemaining = 125;
-    //float timeUpText = 5;
-    public int timeUpFont = 20;
+    float timeUpText = 5;
+    public int timeUpFont = 5;
+    public GameObject gameOverText;
+
+    public IEnumerator IGameOverText()
+    {
+        text.text = null;
+        gameOverText.SetActive(true);
+        yield return new WaitForSeconds(timeUpFont);
+        SceneManager.LoadScene("Splash Screen");
+    }
 
 	void Start ()
     {
         text = GetComponent<Text>();
-	}
+    }
 
 
     void Update()
@@ -27,10 +36,11 @@ public class CountDownTimer : MonoBehaviour
             }
             else
             {
-                text.text = "TIME'S UP!";
-                text.fontSize = timeUpFont;
+                StartCoroutine(IGameOverText());
+                //text.text = "TIME'S UP!";
+                //text.fontSize = timeUpFont;
                 //yield return new WaitForSeconds(timeUpText);
-                SceneManager.LoadScene("Splash Screen");
+                //SceneManager.LoadScene("Splash Screen");
             }
         }
     }
