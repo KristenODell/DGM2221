@@ -101,5 +101,10 @@ public class MovePlayer : MonoBehaviour
             SceneManager.LoadScene("Prototype One");
         }
 
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            
+        }
+
     }
 }
