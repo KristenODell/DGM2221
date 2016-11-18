@@ -21,7 +21,7 @@ public class StarCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(.07f, .07f, 0);
+        transform.Translate(.1f, .1f, 0);
     }
 
     //void OnCollisionEnter(Collision collision)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,28 @@ public class MovePlayer : MonoBehaviour
     public float deathHeight = -10f;
 
     public GameObject star;
+
+
+    public GameObject gameOverText;
+    public GameObject EndGameScreen;
+    public GameObject pause;
+    float timeUpText = 5;
+    public Text text;
+    public Text starCount;
+    public int timeUpFont = 150;
+    public GameObject player;
+
+    public IEnumerator IGameOverText()
+    {
+        text.enabled = false;
+        pause.SetActive(false);
+        starCount.enabled = false;
+        gameOverText.SetActive(true);
+        yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
+        //SceneManager.LoadScene("Splash Screen");
+        EndGameScreen.SetActive(true);
+        player.SetActive(false);
+    }
 
     //Coroutine for sliding the character. Coroutines are IEnumerators.
     IEnumerator Slide()
@@ -96,15 +119,10 @@ public class MovePlayer : MonoBehaviour
 
         if (transform.position.y <= deathHeight)
         {
-            Statics.nextPosition = Statics.originalPosition;
-            Statics.backgroundNextPosition = Statics.backgroundOriginalPosition;
-            SceneManager.LoadScene("Prototype One");
+            //Statics.nextPosition = Statics.originalPosition;
+            //Statics.backgroundNextPosition = Statics.backgroundOriginalPosition;
+            //SceneManager.LoadScene("Prototype One");
+            StartCoroutine(IGameOverText());
         }
-
-        if(Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            
-        }
-
     }
 }

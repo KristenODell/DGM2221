@@ -32,6 +32,8 @@ public class menuScript : MonoBehaviour
     }
     public void StartLevel ()
     {
+        Statics.nextPosition = Statics.originalPosition;
+        Statics.backgroundNextPosition = Statics.backgroundOriginalPosition;
         SceneManager.LoadScene("Prototype One");
     }
 

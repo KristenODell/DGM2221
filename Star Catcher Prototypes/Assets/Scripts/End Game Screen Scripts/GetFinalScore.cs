@@ -18,6 +18,6 @@ public class GetFinalScore : MonoBehaviour
 	void Update ()
     {
         finalScore.text = "FINAL SCORE : " + starCount.starCount;
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 }
