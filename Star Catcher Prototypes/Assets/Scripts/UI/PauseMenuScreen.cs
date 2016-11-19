@@ -4,11 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuScreen : MonoBehaviour
 {
+    public Canvas instructionsMenu;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-	
+        instructionsMenu.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -26,5 +27,15 @@ public class PauseMenuScreen : MonoBehaviour
     public void MainMenu ()
     {
         SceneManager.LoadScene("Splash Screen");
+    }
+
+    public void Instructions ()
+    {
+        instructionsMenu.enabled = true;
+    }
+
+    public void ExitInstructions ()
+    {
+        instructionsMenu.enabled = false;
     }
 }

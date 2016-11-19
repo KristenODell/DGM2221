@@ -5,7 +5,7 @@ using System.Collections;
 public class PauseGame : MonoBehaviour
 {
     public Transform canvas;
-
+    public Button pause;
 
 
 
@@ -40,11 +40,13 @@ public class PauseGame : MonoBehaviour
         {
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
+            pause.enabled = false;
         }
         else
         {
             canvas.gameObject.SetActive(false);
             Time.timeScale = 1;
+            pause.enabled = true;
         }
     }
 }
