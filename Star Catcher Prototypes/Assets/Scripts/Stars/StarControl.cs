@@ -5,7 +5,7 @@ public class StarControl : MonoBehaviour
 {
     public int forceTime = 10;
     public float forceDuration = 0.1f;
-    private bool canAddForce = true;
+    //private bool canAddForce = true;
     private Rigidbody rigid;
     private float force;
     public float forceRange = 10;
@@ -47,7 +47,7 @@ public class StarControl : MonoBehaviour
 
     void OnCollisionEnter()
     {
-        canAddForce = false;
+        //canAddForce = false;
         //gameObject.SetActive(false);
         Destroy(gameObject, endTime);
         //anims.SetBool("Destroy", true);

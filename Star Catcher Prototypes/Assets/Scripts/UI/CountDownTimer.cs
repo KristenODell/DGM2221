@@ -8,7 +8,6 @@ public class CountDownTimer : MonoBehaviour
     public Text text;
     public Text starCount;
     float timeRemaining = 125;
-    float timeUpText = 5;
     public int timeUpFont = 150;
     public GameObject gameOverText;
     public GameObject EndGameScreen;

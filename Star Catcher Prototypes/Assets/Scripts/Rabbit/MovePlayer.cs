@@ -28,7 +28,6 @@ public class MovePlayer : MonoBehaviour
     public GameObject gameOverText;
     public GameObject EndGameScreen;
     public GameObject pause;
-    float timeUpText = 5;
     public Text text;
     public Text starCount;
     public int timeUpFont = 150;

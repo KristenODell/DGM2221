@@ -8,11 +8,11 @@ public class LeftOffScreenRestart : MonoBehaviour
     public GameObject gameOverText;
     public GameObject EndGameScreen;
     public GameObject pause;
-    float timeUpText = 5;
     public Text text;
     public Text starCount;
     public int timeUpFont = 150;
     public GameObject player;
+    public int wait = 30;
 
     public IEnumerator IGameOverText()
     {
@@ -26,6 +26,12 @@ public class LeftOffScreenRestart : MonoBehaviour
         player.SetActive(false);
     }
 
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(wait * Time.deltaTime);
+        StartCoroutine(IGameOverText());
+    }
+
     void Start()
     {
         transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 50));
@@ -36,6 +42,7 @@ public class LeftOffScreenRestart : MonoBehaviour
         //Statics.nextPosition = Statics.originalPosition;
         //Statics.backgroundNextPosition = Statics.backgroundOriginalPosition;
         //SceneManager.LoadScene("Prototype One");
-        StartCoroutine(IGameOverText());
+        //StartCoroutine(IGameOverText());
+        StartCoroutine(Wait());
     }
 }
