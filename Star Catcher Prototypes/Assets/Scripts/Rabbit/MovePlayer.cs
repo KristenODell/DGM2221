@@ -30,6 +30,7 @@ public class MovePlayer : MonoBehaviour
     public GameObject pause;
     public Text text;
     public Text starCount;
+    public Text stealthCount;
     public int timeUpFont = 150;
     public GameObject player;
 
@@ -38,6 +39,7 @@ public class MovePlayer : MonoBehaviour
         text.enabled = false;
         pause.SetActive(false);
         starCount.enabled = false;
+        stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
         //SceneManager.LoadScene("Splash Screen");

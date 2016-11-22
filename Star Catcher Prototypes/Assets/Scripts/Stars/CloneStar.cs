@@ -11,12 +11,14 @@ public class CloneStar : MonoBehaviour
 
     private int i = 0;
     //private int j = 0;
+    //private int j = 0;
 
     IEnumerator SpawnStars()
     {
         while (canSpawnStars)
         {
             i = Random.Range(0, spawnPoints.Length - 1);
+            //j = Random.Range(0, stars.Length - 1);
             //stars[j].SetActive(true);
             //stars[j].transform.position = spawnPoints[i].position;
 

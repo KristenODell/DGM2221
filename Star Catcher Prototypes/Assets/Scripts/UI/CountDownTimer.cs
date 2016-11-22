@@ -7,6 +7,7 @@ public class CountDownTimer : MonoBehaviour
 {
     public Text text;
     public Text starCount;
+    public Text stealthCount;
     float timeRemaining = 125;
     public int timeUpFont = 150;
     public GameObject gameOverText;
@@ -20,6 +21,7 @@ public class CountDownTimer : MonoBehaviour
         text.enabled = false;
         pause.SetActive(false);
         starCount.enabled = false;
+        stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
         //SceneManager.LoadScene("Splash Screen");
