@@ -20,9 +20,14 @@ public class StealthCounter : MonoBehaviour
         {
             stealthCount = 0;
         }
-        if(stealthCount > 5)
+        if(stealthCount >= 5)
         {
             stealthCount = 5;
+            counter.color = Color.red;
+        }
+        else
+        {
+            counter.color = Color.white;
         }
     }
 }

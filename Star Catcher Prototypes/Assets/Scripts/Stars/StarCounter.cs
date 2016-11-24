@@ -15,7 +15,7 @@ public class StarCounter : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        counter.text = "STAR COUNT: " + starCount;
+        counter.text = "X " + starCount;
         if(starCount < 0)
         {
             starCount = 0;

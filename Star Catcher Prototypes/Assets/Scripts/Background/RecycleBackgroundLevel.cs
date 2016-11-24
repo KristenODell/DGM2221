@@ -16,7 +16,7 @@ public class RecycleBackgroundLevel : MonoBehaviour
     {
         recycleList = new List<BackgroundSendToRecycler>();
         BackgroundSendToRecycler.SendThis += SendThisHandler;
-        movePos.z = 20;
+        movePos.z = 58;
         movePos.y = 0;
     }
 
@@ -27,7 +27,7 @@ public class RecycleBackgroundLevel : MonoBehaviour
         recycleList[i].transform.position = movePos;
         recycleList.RemoveAt(i);
         Statics.backgroundNextPosition += Statics.backgroundDistance;
-        movePos.z = 20;
+        movePos.z = 58;
         movePos.y = 0;
     }
 
