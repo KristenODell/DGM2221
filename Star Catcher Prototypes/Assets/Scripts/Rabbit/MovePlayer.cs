@@ -28,6 +28,7 @@ public class MovePlayer : MonoBehaviour
     public GameObject gameOverText;
     public GameObject EndGameScreen;
     public GameObject pause;
+    public GameObject starScreen;
     public Text text;
     public Text starCount;
     public Text stealthCount;
@@ -38,6 +39,7 @@ public class MovePlayer : MonoBehaviour
     {
         text.enabled = false;
         pause.SetActive(false);
+        starScreen.SetActive(false);
         starCount.enabled = false;
         stealthCount.enabled = false;
         gameOverText.SetActive(true);

@@ -6,6 +6,7 @@ public class StealthCounter : MonoBehaviour
 {
     public float stealthCount = 0;
     public Text counter;
+    public GameObject glow;
 
     void Start()
     {

@@ -8,6 +8,7 @@ public class LeftOffScreenRestart : MonoBehaviour
     public GameObject gameOverText;
     public GameObject EndGameScreen;
     public GameObject pause;
+    public GameObject star;
     public Text text;
     public Text starCount;
     public Text stealthCount;
@@ -17,6 +18,7 @@ public class LeftOffScreenRestart : MonoBehaviour
 
     public IEnumerator IGameOverText()
     {
+        star.SetActive(false);
         text.enabled = false;
         pause.SetActive(false);
         starCount.enabled = false;
@@ -25,6 +27,7 @@ public class LeftOffScreenRestart : MonoBehaviour
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
         EndGameScreen.SetActive(true);
         player.SetActive(false);
+
     }
 
     void OnTriggerEnter()

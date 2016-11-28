@@ -5,6 +5,15 @@ public class CoinDamage : MonoBehaviour
 {
     private StarCounter starCounter;
     private int damage = 2;
+    public GameObject playerHalo;
+    public float wait = 2;
+
+    public IEnumerator damageHalo ()
+    {
+        playerHalo.SetActive(true);
+        yield return new WaitForSeconds(wait);
+        playerHalo.SetActive(false);
+    }
 
 	// Use this for initialization
 	void Start ()
@@ -17,6 +26,7 @@ public class CoinDamage : MonoBehaviour
         if (starCounter.starCount > 0)
         {
             starCounter.starCount -= damage;
+            StartCoroutine(damageHalo());
         }
     }
 

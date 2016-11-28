@@ -14,12 +14,13 @@ public class CountDownTimer : MonoBehaviour
     public GameObject EndGameScreen;
     public GameObject player;
     public GameObject pause;
-
+    public GameObject starScreen;
 
     public IEnumerator IGameOverText()
     {
         text.enabled = false;
         pause.SetActive(false);
+        starScreen.SetActive(false);
         starCount.enabled = false;
         stealthCount.enabled = false;
         gameOverText.SetActive(true);
