@@ -7,12 +7,22 @@ public class CoinDamage : MonoBehaviour
     private int damage = 2;
     public GameObject playerHalo;
     public float wait = 2;
+    public float damageNumberWait = 5;
+
+    public GameObject damageNumber;
 
     public IEnumerator damageHalo ()
     {
         playerHalo.SetActive(true);
         yield return new WaitForSeconds(wait);
         playerHalo.SetActive(false);
+    }
+
+    public IEnumerator damageNumberFlash ()
+    {
+        damageNumber.SetActive(true);
+        yield return new WaitForSeconds(damageNumberWait);
+        damageNumber.SetActive(false);
     }
 
 	// Use this for initialization
@@ -27,6 +37,7 @@ public class CoinDamage : MonoBehaviour
         {
             starCounter.starCount -= damage;
             StartCoroutine(damageHalo());
+            StartCoroutine(damageNumberFlash());
         }
     }
 

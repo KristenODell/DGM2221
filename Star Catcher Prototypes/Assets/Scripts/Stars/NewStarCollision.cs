@@ -1,22 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BlackHoleCollision : MonoBehaviour
+public class NewStarCollision : MonoBehaviour
 {
 
     private StarCounter starCounter;
+    public GameObject star;
 
 
+    // Use this for initialization
     void Awake()
     {
         starCounter = GameObject.Find("Star Counter").GetComponent<StarCounter>();
     }
 
-
-
-    void OnTriggerEnter()
+    void OnCollisionEnter()
     {
-        starCounter.starCount = starCounter.starCount - 3;
+            starCounter.starCount++;
+            star.SetActive(false);
     }
 
 }

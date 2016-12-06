@@ -37,6 +37,7 @@ public class StarControl : MonoBehaviour
         }
     }
 
+
     public float endTime = 5;
 
     //public void Deactivate()

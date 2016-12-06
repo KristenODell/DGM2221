@@ -10,14 +10,17 @@ public class StealthMode : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     private Color color;
     private Color color2;
+    public GameObject halo;
 
 
     public IEnumerator Stealth()
     {
         gameObject.layer = 22;
         spriteRenderer.material.SetColor("_Color", Color.black);
+        halo.SetActive(true);
         yield return new WaitForSeconds(stealthTime);
         gameObject.layer = 11;
+        halo.SetActive(false);
         spriteRenderer.material.SetColor("_Color", Color.white);
     }
 
@@ -26,6 +29,7 @@ public class StealthMode : MonoBehaviour
     {
         stealthCount = GameObject.Find("Stealth").GetComponent<StealthCounter>();
         spriteRenderer = GameObject.Find("rabbitIdle").GetComponent<SpriteRenderer>();
+        halo.SetActive(false);
     }
 	
 	// Update is called once per frame
