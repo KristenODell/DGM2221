@@ -6,6 +6,7 @@ public class GetFinalScore : MonoBehaviour
 {
     public Text finalScore;
     private StarCounter starCount;
+    public Text level;
 
 	// Use this for initialization
 	void Start ()
@@ -18,6 +19,17 @@ public class GetFinalScore : MonoBehaviour
 	void Update ()
     {
         finalScore.text = "FINAL SCORE : " + starCount.starCount;
-        //Time.timeScale = 0;
+        if(starCount.starCount >= 0 && starCount.starCount < 15)
+        {
+            level.text = "YOU ARE A WIMP!";
+        }
+        else if (starCount.starCount >= 15 && starCount.starCount <= 40)
+        {
+            level.text = "YOU ARE AN AMATEUR!";
+        }
+        else
+        {
+            level.text = "YOU ARE A MASTER!";
+        }
     }
 }
