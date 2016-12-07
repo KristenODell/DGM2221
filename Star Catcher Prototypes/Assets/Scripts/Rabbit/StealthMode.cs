@@ -4,22 +4,28 @@ using System.Collections;
 public class StealthMode : MonoBehaviour
 {
     private StealthCounter stealthCount;
-    private MovePlayer characterController;
-    public int stealthTime = 10;
+    public int stealthTime = 7;
     public float subtractingStealthMeter = 5;
     public SpriteRenderer spriteRenderer;
-    private Color color;
-    private Color color2;
     public GameObject halo;
+    public GameObject starCollision;
+    public GameObject stealthStarCollision;
+    public GameObject blackHoleCollision;
 
 
     public IEnumerator Stealth()
     {
+        starCollision.SetActive(false);
+        stealthStarCollision.SetActive(false);
+        blackHoleCollision.SetActive(false);
         gameObject.layer = 22;
         spriteRenderer.material.SetColor("_Color", Color.black);
         halo.SetActive(true);
         yield return new WaitForSeconds(stealthTime);
         gameObject.layer = 11;
+        starCollision.SetActive(true);
+        stealthStarCollision.SetActive(true);
+        blackHoleCollision.SetActive(true);
         halo.SetActive(false);
         spriteRenderer.material.SetColor("_Color", Color.white);
     }

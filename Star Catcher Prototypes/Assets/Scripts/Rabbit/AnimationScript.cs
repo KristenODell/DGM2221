@@ -6,14 +6,12 @@ public class AnimationScript : MonoBehaviour
     private Animator anim;
     public CharacterController cc;
     //int jumpHash = Animator.StringToHash("jump");
-    private Rigidbody myRig;
 
 
     void Start()
     {
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>();
-        myRig = GetComponent<Rigidbody>();
     }
 
 

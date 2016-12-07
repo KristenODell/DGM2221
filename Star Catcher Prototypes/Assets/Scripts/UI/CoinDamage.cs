@@ -7,7 +7,7 @@ public class CoinDamage : MonoBehaviour
     private int damage = 2;
     public GameObject playerHalo;
     public float wait = 2;
-    public float damageNumberWait = 5;
+    public float damageNumberWait = 2;
 
     public GameObject damageNumber;
 
@@ -36,9 +36,9 @@ public class CoinDamage : MonoBehaviour
         if (starCounter.starCount > 0)
         {
             starCounter.starCount -= damage;
+        }
             StartCoroutine(damageHalo());
             StartCoroutine(damageNumberFlash());
-        }
     }
 
 	// Update is called once per frame

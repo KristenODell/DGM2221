@@ -15,9 +15,11 @@ public class CountDownTimer : MonoBehaviour
     public GameObject player;
     public GameObject pause;
     public GameObject starScreen;
+    public AudioSource backgroundMusic;
 
     public IEnumerator IGameOverText()
-    {
+    { 
+        player.SetActive(false);
         text.enabled = false;
         pause.SetActive(false);
         starScreen.SetActive(false);
@@ -25,10 +27,10 @@ public class CountDownTimer : MonoBehaviour
         stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
-        //SceneManager.LoadScene("Splash Screen");
+        backgroundMusic.volume = .07f;
         EndGameScreen.SetActive(true);
-        player.SetActive(false);
     }
+
 
 	void Start ()
     {
@@ -48,10 +50,6 @@ public class CountDownTimer : MonoBehaviour
             else
             {
                 StartCoroutine(IGameOverText());
-                //text.text = "TIME'S UP!";
-                //text.fontSize = timeUpFont;
-                //yield return new WaitForSeconds(timeUpText);
-                //SceneManager.LoadScene("Splash Screen");
             }
         }
     }

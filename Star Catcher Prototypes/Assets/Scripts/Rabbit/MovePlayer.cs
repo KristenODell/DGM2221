@@ -34,9 +34,11 @@ public class MovePlayer : MonoBehaviour
     public Text stealthCount;
     public int timeUpFont = 150;
     public GameObject player;
+    public AudioSource backgroundMusic;
 
     public IEnumerator IGameOverText()
     {
+        player.SetActive(false);
         text.enabled = false;
         pause.SetActive(false);
         starScreen.SetActive(false);
@@ -44,9 +46,8 @@ public class MovePlayer : MonoBehaviour
         stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
-        //SceneManager.LoadScene("Splash Screen");
+        backgroundMusic.volume = .07f; ;
         EndGameScreen.SetActive(true);
-        player.SetActive(false);
     }
 
     //Coroutine for sliding the character. Coroutines are IEnumerators.
