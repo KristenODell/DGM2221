@@ -8,7 +8,7 @@ public class CountDownTimer : MonoBehaviour
     public Text text;
     public Text starCount;
     public Text stealthCount;
-    float timeRemaining = 125;
+    public float timeRemaining = 125;
     public int timeUpFont = 150;
     public GameObject gameOverText;
     public GameObject EndGameScreen;
@@ -16,10 +16,15 @@ public class CountDownTimer : MonoBehaviour
     public GameObject pause;
     public GameObject starScreen;
     public AudioSource backgroundMusic;
+    public GameObject numberFlash;
+    public GameObject particles;
 
     public IEnumerator IGameOverText()
-    { 
+    {
+        backgroundMusic.volume = .02f;
         player.SetActive(false);
+        numberFlash.SetActive(false);
+        particles.SetActive(false);
         text.enabled = false;
         pause.SetActive(false);
         starScreen.SetActive(false);
@@ -27,7 +32,6 @@ public class CountDownTimer : MonoBehaviour
         stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
-        backgroundMusic.volume = .07f;
         EndGameScreen.SetActive(true);
     }
 

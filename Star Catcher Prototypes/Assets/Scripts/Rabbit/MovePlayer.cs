@@ -20,7 +20,7 @@ public class MovePlayer : MonoBehaviour
     //Sliding vars
     public int slideDuration = 100;
     public float slideTime = 0.1f;
-    public float deathHeight = -10f;
+    public float deathHeight = -100f;
 
     public GameObject star;
 
@@ -35,10 +35,19 @@ public class MovePlayer : MonoBehaviour
     public int timeUpFont = 150;
     public GameObject player;
     public AudioSource backgroundMusic;
+    public GameObject numberFlash;
+    public GameObject particles;
+
+    private AudioSource dyingSource;
+    public AudioClip dying;
 
     public IEnumerator IGameOverText()
     {
+        dyingSource.PlayOneShot(dying);
+        backgroundMusic.volume = 0;
         player.SetActive(false);
+        numberFlash.SetActive(false);
+        particles.SetActive(false);
         text.enabled = false;
         pause.SetActive(false);
         starScreen.SetActive(false);
@@ -46,7 +55,7 @@ public class MovePlayer : MonoBehaviour
         stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
-        backgroundMusic.volume = .07f; ;
+        backgroundMusic.volume = .02f; ;
         EndGameScreen.SetActive(true);
     }
 
@@ -80,6 +89,7 @@ public class MovePlayer : MonoBehaviour
     {
         //This "finds" the character controller component
         myCC = GetComponent<CharacterController>();
+        dyingSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

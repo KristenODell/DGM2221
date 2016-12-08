@@ -11,6 +11,9 @@ public class CoinDamage : MonoBehaviour
 
     public GameObject damageNumber;
 
+    private AudioSource damageSource;
+    public AudioClip damagePlayer;
+
     public IEnumerator damageHalo ()
     {
         playerHalo.SetActive(true);
@@ -29,10 +32,12 @@ public class CoinDamage : MonoBehaviour
 	void Start ()
     {
         starCounter = GameObject.Find("Star Counter").GetComponent<StarCounter>();
+        damageSource = GetComponent<AudioSource>();
     }
 	
     void OnTriggerEnter()
     {
+        damageSource.PlayOneShot(damagePlayer);
         if (starCounter.starCount > 0)
         {
             starCounter.starCount -= damage;

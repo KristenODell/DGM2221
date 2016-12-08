@@ -16,10 +16,15 @@ public class LeftOffScreenRestart : MonoBehaviour
     public GameObject player;
     public int wait = 30;
     public AudioSource backgroundMusic;
+    public GameObject numberFlash;
+    public GameObject particles;
 
     public IEnumerator IGameOverText()
     {
+        backgroundMusic.volume = 0;
         player.SetActive(false);
+        numberFlash.SetActive(false);
+        particles.SetActive(false);
         star.SetActive(false);
         text.enabled = false;
         pause.SetActive(false);
@@ -27,7 +32,7 @@ public class LeftOffScreenRestart : MonoBehaviour
         stealthCount.enabled = false;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
-        backgroundMusic.volume = .07f;
+        backgroundMusic.volume = .02f;
         EndGameScreen.SetActive(true);
 
     }

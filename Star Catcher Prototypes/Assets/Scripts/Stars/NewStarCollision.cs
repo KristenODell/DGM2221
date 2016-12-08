@@ -14,10 +14,12 @@ public class NewStarCollision : MonoBehaviour
         starCounter = GameObject.Find("Star Counter").GetComponent<StarCounter>();
     }
 
+
     void OnCollisionEnter()
     {
-            starCounter.starCount++;
-            star.SetActive(false);
+        starCounter.starCount++;
+        star.SetActive(false);
     }
+
 
 }

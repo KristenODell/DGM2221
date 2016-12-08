@@ -8,11 +8,14 @@ public class PauseGame : MonoBehaviour
     public Button pause;
     public AudioSource backgroundMusic;
 
+    private AudioSource buttonClickSource;
+    public AudioClip buttonClick;
+
 
     // Use this for initialization
     void Start()
     {
-
+        buttonClickSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class PauseGame : MonoBehaviour
     {
         if (canvas.gameObject.activeInHierarchy == false)
         {
+            buttonClickSource.PlayOneShot(buttonClick);
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
             pause.enabled = false;
@@ -45,6 +49,7 @@ public class PauseGame : MonoBehaviour
         }
         else
         {
+            buttonClickSource.PlayOneShot(buttonClick);
             canvas.gameObject.SetActive(false);
             Time.timeScale = 1;
             pause.enabled = true;
