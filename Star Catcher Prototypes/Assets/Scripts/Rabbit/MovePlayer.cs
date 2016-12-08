@@ -28,7 +28,6 @@ public class MovePlayer : MonoBehaviour
     public GameObject gameOverText;
     public GameObject EndGameScreen;
     public GameObject pause;
-    public GameObject starScreen;
     public Text text;
     public Text starCount;
     public Text stealthCount;
@@ -37,23 +36,27 @@ public class MovePlayer : MonoBehaviour
     public AudioSource backgroundMusic;
     public GameObject numberFlash;
     public GameObject particles;
+    float i = 100;
 
 
     public IEnumerator IGameOverText()
     {
-        backgroundMusic.volume = 0;
-        player.SetActive(false);
-        numberFlash.SetActive(false);
-        particles.SetActive(false);
-        text.enabled = false;
-        pause.SetActive(false);
-        starScreen.SetActive(false);
-        starCount.enabled = false;
-        stealthCount.enabled = false;
-        gameOverText.SetActive(true);
-        yield return new WaitForSeconds(timeUpFont * Time.deltaTime);
+        while (i > 0)
+        {
+            backgroundMusic.volume = 0;
+            player.SetActive(false);
+            numberFlash.SetActive(false);
+            particles.SetActive(false);
+            text.enabled = false;
+            pause.SetActive(false);
+            starCount.enabled = false;
+            stealthCount.enabled = false;
+            gameOverText.SetActive(true);
+            i -= Time.deltaTime;
+        }
         backgroundMusic.volume = .02f; ;
         EndGameScreen.SetActive(true);
+        yield return null;
     }
 
     //Coroutine for sliding the character. Coroutines are IEnumerators.

@@ -21,15 +21,15 @@ public class GetFinalScore : MonoBehaviour
         finalScore.text = "FINAL SCORE : " + starCount.starCount;
         if(starCount.starCount >= 0 && starCount.starCount < 15)
         {
-            level.text = "RANKING: WIMP";
+            level.text = "STATUS: WIMP";
         }
         else if (starCount.starCount >= 15 && starCount.starCount <= 40)
         {
-            level.text = "RANKING: AMATEUR";
+            level.text = "STATUS: AMATEUR";
         }
         else
         {
-            level.text = "RANKING: MASTER";
+            level.text = "STATUS: MASTER";
         }
     }
 }
