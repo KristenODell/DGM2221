@@ -38,12 +38,9 @@ public class MovePlayer : MonoBehaviour
     public GameObject numberFlash;
     public GameObject particles;
 
-    private AudioSource dyingSource;
-    public AudioClip dying;
 
     public IEnumerator IGameOverText()
     {
-        dyingSource.PlayOneShot(dying);
         backgroundMusic.volume = 0;
         player.SetActive(false);
         numberFlash.SetActive(false);
@@ -89,7 +86,6 @@ public class MovePlayer : MonoBehaviour
     {
         //This "finds" the character controller component
         myCC = GetComponent<CharacterController>();
-        dyingSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

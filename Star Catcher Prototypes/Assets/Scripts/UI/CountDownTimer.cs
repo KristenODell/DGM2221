@@ -19,6 +19,12 @@ public class CountDownTimer : MonoBehaviour
     public GameObject numberFlash;
     public GameObject particles;
 
+
+    private AudioSource source;
+    public AudioClip clip;
+
+    int i = 1;
+
     public IEnumerator IGameOverText()
     {
         backgroundMusic.volume = .02f;
@@ -39,6 +45,7 @@ public class CountDownTimer : MonoBehaviour
 	void Start ()
     {
         text = GetComponent<Text>();
+        source = GetComponent<AudioSource>();
     }
 
 
@@ -53,6 +60,14 @@ public class CountDownTimer : MonoBehaviour
             }
             else
             {
+                while (i > 0)
+                {
+                    if (!source.isPlaying)
+                    {
+                        source.PlayOneShot(clip);
+                    }
+                    i--;
+                }
                 StartCoroutine(IGameOverText());
             }
         }

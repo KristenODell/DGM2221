@@ -13,6 +13,9 @@ public class WolfHowl : MonoBehaviour {
 
     void OnTriggerEnter ()
     {
-        wolfHowlSource.PlayOneShot(wolfHowl);
+        if (!wolfHowlSource.isPlaying)
+        {
+            wolfHowlSource.PlayOneShot(wolfHowl);
+        }
     }
 }
